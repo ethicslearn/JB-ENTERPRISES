@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - JB ENTERPRISE</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h2><i class="fas fa-tools"></i> JB ENTERPRISE</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="product.html" class="active">Products</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="products-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Our Products</h1>
+                <p>Discover our comprehensive range of quality hardware products</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-filter">
+        <div class="container">
+            <div class="search-bar">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                </div>
+                <div class="filter-controls">
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="hand-tools">Hand Tools</option>
+                        <option value="power-tools">Power Tools</option>
+                        <option value="electrical">Electrical Supplies</option>
+                        <option value="plumbing">Plumbing Materials</option>
+                        <option value="paint">Paint & Supplies</option>
+                        <option value="hardware">General Hardware</option>
+                    </select>
+                    <select id="sortFilter">
+                        <option value="name">Sort by Name</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories Section -->
+    <section class="product-categories">
+        <div class="container">
+            <h2>Product Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="hand-tools">
+                    <div class="category-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>Hand Tools</h3>
+                    <p>Wrenches, screwdrivers, pliers, and more</p>
+                    <span class="product-count">45+ Products</span>
+                </div>
+                <div class="category-card" data-category="power-tools">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Power Tools</h3>
+                    <p>Drills, saws, grinders, and accessories</p>
+                    <span class="product-count">32+ Products</span>
+                </div>
+                <div class="category-card" data-category="electrical">
+                    <div class="category-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical Supplies</h3>
+                    <p>Wires, switches, outlets, and fittings</p>
+                    <span class="product-count">58+ Products</span>
+                </div>
+                <div class="category-card" data-category="plumbing">
+                    <div class="category-icon">
+                        <i class="fas fa-faucet"></i>
+                    </div>
+                    <h3>Plumbing Materials</h3>
+                    <p>Pipes, fittings, valves, and fixtures</p>
+                    <span class="product-count">41+ Products</span>
+                </div>
+                <div class="category-card" data-category="paint">
+                    <div class="category-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3>Paint & Supplies</h3>
+                    <p>Paints, brushes, rollers, and accessories</p>
+                    <span class="product-count">29+ Products</span>
+                </div>
+                <div class="category-card" data-category="hardware">
+                    <div class="category-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>General Hardware</h3>
+                    <p>Screws, bolts, nuts, and fasteners</p>
+                    <span class="product-count">67+ Products</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid Section -->
+    <section class="products-grid">
+        <div class="container">
+            <div class="products-header">
+                <h2>Featured Products</h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="productsContainer" class="products-container grid-view">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+            
+            <div class="load-more">
+                <button id="loadMoreBtn" class="load-more-btn">
+                    <i class="fas fa-plus"></i> Load More Products
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="product-images">
+                    <img id="modalProductImage" src="" alt="Product">
+                </div>
+                <div class="product-details">
+                    <h2 id="modalProductName"></h2>
+                    <div class="product-rating">
+                        <div class="stars" id="modalProductRating"></div>
+                        <span class="rating-text">4.5 (24 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price" id="modalProductPrice"></span>
+                        <span class="original-price" id="modalProductOriginalPrice"></span>
+                    </div>
+                    <div class="product-description">
+                        <p id="modalProductDescription"></p>
+                    </div>
+                    <div class="product-specifications">
+                        <h4>Specifications:</h4>
+                        <ul id="modalProductSpecs"></ul>
+                    </div>
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn" data-action="decrease">-</button>
+                            <input type="number" id="quantity" value="1" min="1">
+                            <button class="qty-btn" data-action="increase">+</button>
+                        </div>
+                        <button class="add-to-cart-btn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        <button class="buy-now-btn">
+                            <i class="fas fa-bolt"></i> Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Shopping Cart</h3>
+            <button id="closeCart" class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be displayed here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total: ₹<span id="cartTotal">0</span></span>
+            </div>
+            <button class="checkout-btn">
+                <i class="fas fa-credit-card"></i> Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Toggle Button -->
+    <button id="cartToggle" class="cart-toggle">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JB ENTERPRISE</h3>
+                    <p>Your trusted hardware partner for over 25 years. Quality products, competitive prices, and exceptional service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Product Categories</h4>
+                    <ul>
+                        <li><a href="#">Hand Tools</a></li>
+                        <li><a href="#">Power Tools</a></li>
+                        <li><a href="#">Electrical Supplies</a></li>
+                        <li><a href="#">Plumbing Materials</a></li>
+                        <li><a href="#">Paint & Supplies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Bajrang Nagar - Akhaipur Rd, Dobhi, Jaunpur, Uttar Pradesh</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@jbenterprise.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 JB ENTERPRISE. All rights reserved. | Designed with ❤️ for our customers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+</body>
+</html>
